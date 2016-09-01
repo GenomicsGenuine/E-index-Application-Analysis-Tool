@@ -14,6 +14,10 @@ This is an analysis tool based on the Browse/Server structure for differentiatin
 1. Please comfirm it is under the Matlab environment before downloading the profiles
 *** All kinds of Matlab downloads: http://www.mathworks.com/
 
-2. Alternative server (Apache or Nginx) can be selected to start the tool, with Apache linked to http://www.apache.org/, with Nginx linked to http://www.apache.org/.
+2. Alternative servers (Apache or Nginx) can be selected to start the tool, with Apache linked to http://www.apache.org/, with Nginx linked to http://www.apache.org/.
 
-3. More importantly, you can follow the instructions to use the tool that can also run without database.
+3. More importantly, it can also run without database. You can follow the specific instructions of the tool having been built in your computer and just start the exploration. 
+
+Support:
+
+Some inevitable problems appear, please contact the email: wangjx@bjfu.edu.cn. After going through, the supporter will get back to you.
