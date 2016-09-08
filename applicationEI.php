@@ -5,29 +5,23 @@ if ((($_FILES["file"]["type"] == "text/plain"))
     echo "Return Code: " . $_FILES["file"]["error"] . "<br />";
     }
     else{
-    //echo "Upload: " . $_FILES["file"]["name"] . "<br />";
-    //echo "Type: " . $_FILES["file"]["type"] . "<br />";
-    //echo "Size: " . ($_FILES["file"]["size"] / 1024) . " Kb<br />";
-    //echo "Temp file: " . $_FILES["file"]["tmp_name"] . "<br />";
         if (file_exists("input/" . $_FILES["file"]["name"])){
             echo '<script>';
             echo 'alert("already exists."); ';
             echo '</script>';
-      //echo $_FILES["file"]["name"] . " already exists. ";
         }
         else{
-            move_uploaded_file($_FILES["file"]["tmp_name"],                           "input/" . $_FILES["file"]["name"]);
+            move_uploaded_file($_FILES["file"]["tmp_name"], "input/" . $_FILES["file"]["name"]);
             echo '<script>';
             echo 'alert("upload success!"); ';
             echo '</script>';
-            //echo "Stored in: " . "input/" . $_FILES["file"]["name"];
+
         }
     }
 }
 else{ 
   //echo "Invalid file";  
 }
-
 
 if(isset($_POST['filepath1']) && isset($_POST['filepath2'])){
     $filename1 = $_POST['filepath1'];
@@ -36,38 +30,27 @@ if(isset($_POST['filepath1']) && isset($_POST['filepath2'])){
     $outputDir = "D:\\Programming\\Xampp\\htdocs\\E-index\\input";
     $command = "matlab -nodesktop -minimize -sd ".$inputDir." -r csievv('".$outputDir."\\".$filename1.".txt','".$outputDir."\\".$filename2.".txt')";
     exec($command);
-    
-    
-    //转换数组
+
     $file = fopen('D:\\Programming\\Xampp\\htdocs\\E-index\\input\\test.txt', 'r');
     $matrix = array();
     while($entries = fgetcsv($file)) {
      $matrix[] = $entries;
     }
-    //print_r($matrix);
     fclose($file);
-    //echo '<script language="JavaScript" type="text/javascript">';
-    //echo 'var arr='.json_encode($matrix).';';
-    //echo '</script>';
-    转换数组结束;
-    
-    
-    /* 二、drawCluster1,从导入进来的文件1进行读取*/
+
     $drawCFile1 = fopen("D:\\Programming\\Xampp\\htdocs\\E-index\\input\\".$filename1.".txt", 'r');
     $matrix1 = array();
     while($entries1 = fgetcsv($drawCFile1)) {
         $matrix1[] = $entries1;
     }
-    //print_r($matrix);
     fclose($drawCFile1);
-    //读取文件1结束
-    //转换数据格式,为一个点与一个点相邻
-    $lenR1 = count($matrix1);      //行数
-    $lenC1= count($matrix1[1]);   //列数
+
+    $lenR1 = count($matrix1);
+    $lenC1= count($matrix1[1]);
     for($jj=0;$jj<$lenC1;$jj++){
         for($ii=0;$ii<$lenR1;$ii++){
-        $revmatrix1[$jj/2][$ii*2]=$matrix1[$ii][$jj-1];   //x坐标
-        $revmatrix1[$jj/2][$ii*2+1]=$matrix1[$ii][$jj];   //y坐标
+        $revmatrix1[$jj/2][$ii*2]=$matrix1[$ii][$jj-1];
+        $revmatrix1[$jj/2][$ii*2+1]=$matrix1[$ii][$jj];
         }
     }
     for($i=0;$revmatrix1[$i];$i++){
@@ -80,25 +63,21 @@ if(isset($_POST['filepath1']) && isset($_POST['filepath2'])){
         $str1.="data:".str_replace('"',"",json_encode($outjson1))."},";
         $outjson1='';
     }
-    //print_r($str);
-    
-    
-    /*三、drawCluster2,从导入进来的文件2进行读取*/
+
     $drawCFile2 = fopen("D:\\Programming\\Xampp\\htdocs\\E-index\\input\\".$filename2.".txt", 'r');
     $matrix2 = array();
     while($entries2 = fgetcsv($drawCFile2)) {
         $matrix2[] = $entries2;
     }
-    //print_r($matrix);
+
     fclose($drawCFile2);
-    //读取文件1结束
-    //转换数据格式,为一个点与一个点相邻
-    $lenR2 = count($matrix2);      //行数
-    $lenC2= count($matrix2[1]);   //列数
+
+    $lenR2 = count($matrix2);
+    $lenC2= count($matrix2[1]);
     for($jj=0;$jj<$lenC2;$jj++){
         for($ii=0;$ii<$lenR2;$ii++){
-        $revmatrix2[$jj/2][$ii*2]=$matrix2[$ii][$jj-1];   //x坐标
-        $revmatrix2[$jj/2][$ii*2+1]=$matrix2[$ii][$jj];   //y坐标
+        $revmatrix2[$jj/2][$ii*2]=$matrix2[$ii][$jj-1];
+        $revmatrix2[$jj/2][$ii*2+1]=$matrix2[$ii][$jj];
         }
     }
     for($i=0;$revmatrix2[$i];$i++){
@@ -111,9 +90,7 @@ if(isset($_POST['filepath1']) && isset($_POST['filepath2'])){
         $str2.="data:".str_replace('"',"",json_encode($outjson2))."},";
         $outjson2='';
     }
-        /*End、drawCluster2,从导入进来的文件2进行读取*/
-    
-    //读取文件E—indexv
+
     $file = fopen("D:\\Programming\\Xampp\\htdocs\\E-index\\output\\E-indexv.txt", "r");
     $i = 0;
     while (!feof($file)) {
@@ -121,9 +98,6 @@ if(isset($_POST['filepath1']) && isset($_POST['filepath2'])){
     }
     $members = explode("\n", $line_of_text);
     fclose($file);
-    //echo count($members);
-    //print_r($members);
-    //读取文件E—indexv结束
     
 }
 ?>
@@ -269,8 +243,7 @@ if(isset($_POST['filepath1']) && isset($_POST['filepath2'])){
                                 <?php echo $members[$ii]."/"; ?>
                         <?php
                         }
-                        ?> 
-                        
+                        ?>
                                 </td>                       
                                 <td class="text-center">
                         <?php
@@ -288,16 +261,12 @@ if(isset($_POST['filepath1']) && isset($_POST['filepath2'])){
                 </table>
         </div>
         <!-- /div table -->
-        
 	</div>	<!-- /container -->
-	
 
 	<footer id="footer" class="top-space">
-
 		<div class="footer1">
 			<div class="container">
 				<div class="row">
-					
 					<div class="col-md-3 widget">
 						<h3 class="widget-title">Contact</h3>
 						<div class="widget-body">
@@ -308,7 +277,6 @@ if(isset($_POST['filepath1']) && isset($_POST['filepath2'])){
 							</p>	
 						</div>
 					</div>
-
 					<div class="col-md-3 widget">
 						<h3 class="widget-title">Follow me</h3>
 						<div class="widget-body">
@@ -318,14 +286,12 @@ if(isset($_POST['filepath1']) && isset($_POST['filepath2'])){
 							</p>	
 						</div>
 					</div>
-
 					<div class="col-md-6 widget">
 						<h3 class="widget-title">QR code</h3>
 						<div class="widget-body">
 							<p></p>
 						</div>
 					</div>
-
 				</div> <!-- /row of widgets -->
 			</div>
 		</div>
@@ -333,7 +299,6 @@ if(isset($_POST['filepath1']) && isset($_POST['filepath2'])){
 		<div class="footer2">
 			<div class="container">
 				<div class="row">
-					
 					<div class="col-md-6 widget">
 						<div class="widget-body">
 							<p class="simplenav">
@@ -342,7 +307,6 @@ if(isset($_POST['filepath1']) && isset($_POST['filepath2'])){
 							</p>
 						</div>
 					</div>
-
 					<div class="col-md-6 widget">
 						<div class="widget-body">
 							<p class="text-right">
@@ -350,14 +314,11 @@ if(isset($_POST['filepath1']) && isset($_POST['filepath2'])){
 							</p>
 						</div>
 					</div>
-
 				</div> <!-- /row of widgets -->
 			</div>
 		</div>
 	</footer>	
-		
-
-	<!-- JavaScript libs are placed at the end of the document so the pages load faster -->
+    
     <!-- jQuery 2.0.2 -->
     <script src="assets/js/jQuery.min.js"></script>
 	<script src="assets/js/bootstrap.min.js"></script>
@@ -372,7 +333,7 @@ if(isset($_POST['filepath1']) && isset($_POST['filepath2'])){
     <script src="DataTables/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.min.js"></script>
     
 
-<!--JS验证码-->
+<!--JS-->
     <script>
 (function($){
     $(document).ready(function(){
@@ -386,7 +347,7 @@ if(isset($_POST['filepath1']) && isset($_POST['filepath2'])){
                 async:false,
                 success:function(result) {
                     if(result.status == 1) {
-                        obj.parents('form').submit(); //验证码正确提交表单
+                        obj.parents('form').submit();
                     }else{
                         $(".code-img").click();
                         $(".yzmtips").html('验证码错误！');
@@ -404,11 +365,7 @@ if(isset($_POST['filepath1']) && isset($_POST['filepath2'])){
     });
 })(jQuery);
 </script>
-<!--END JS验证码-->
-    
-    
-    
-    
+
     <script>
     $(function () {
     $('#container').highcharts({
@@ -420,7 +377,7 @@ if(isset($_POST['filepath1']) && isset($_POST['filepath2'])){
         },
         xAxis: {
             type: 'time',
-            dateTimeLabelFormats: { // don't display the dummy year
+            dateTimeLabelFormats: {
                 month: '%e. %b',
                 year: '%b'
             },

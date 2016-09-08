@@ -203,18 +203,10 @@
 							</p>
 						</div>
 					</div>
-
 				</div> <!-- /row of widgets -->
 			</div>
 		</div>
-
-	</footer>	
-		
-
-
-
-
-	<!-- JavaScript libs are placed at the end of the document so the pages load faster -->
+	</footer>
     <!-- jQuery 2.0.2 -->
     <script src="assets/js/jQuery.min.js"></script>
 	<script src="assets/js/bootstrap.min.js"></script>

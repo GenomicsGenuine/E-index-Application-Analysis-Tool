@@ -5,19 +5,14 @@
 	<meta name="viewport"    content="width=device-width, initial-scale=1.0">
 	<meta name="description" content="">
 	<meta name="author"      content="Sergey Pozhilov (GetTemplate.com)">
-	
 	<title>Right Sidebar template - Progressus Bootstrap template</title>
-
 	<link rel="shortcut icon" href="assets/images/gt_favicon.png">
-	
 	<link rel="stylesheet" media="screen" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
 	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
 	<link rel="stylesheet" href="assets/css/font-awesome.min.css">
-
 	<!-- Custom styles for our template -->
 	<link rel="stylesheet" href="assets/css/bootstrap-theme.css" media="screen" >
 	<link rel="stylesheet" href="assets/css/main.css">
-
 	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
 	<!--[if lt IE 9]>
 	<script src="assets/js/html5shiv.js"></script>
@@ -59,19 +54,14 @@
 	<!-- /.navbar -->
 
 	<header id="head" class="secondary"></header>
-
 	<!-- container -->
 	<div class="container">
-
 		<ol class="breadcrumb">
 			<li><a href="index.html">Home</a></li>
 			<li class="active">Right Sidebar</li>
 		</ol>
-
 		<div class="row">
-			
 			<!-- Article main content -->
-			
 				<header class="page-header">
 					<h1 class="page-title">Example</h1>
 				</header>
@@ -101,12 +91,7 @@
 				<p style="text-align:center"><img src="assets/images/usage/result.jpg" /></p>
                 <br><h4 style="text-align:center; font-family:Times New Roman;" >Figure.3</h4>
 				<!--End Results specfication.-->
-				
-		
 			<!-- /Article -->
-			
-			
-
 		</div>
 	</div>	<!-- /container -->
 	
@@ -161,7 +146,6 @@
 							</p>
 						</div>
 					</div>
-
 					<div class="col-md-6 widget">
 						<div class="widget-body">
 							<p class="text-right">
@@ -174,13 +158,7 @@
 			</div>
 		</div>
 
-	</footer>	
-		
-
-
-
-
-	<!-- JavaScript libs are placed at the end of the document so the pages load faster -->
+	</footer>
     <!-- jQuery 2.0.2 -->
     <script src="assets/js/jQuery.min.js"></script>
 	<script src="assets/js/bootstrap.min.js"></script>

@@ -8,11 +8,6 @@ if ((($_FILES["file"]["type"] == "text/plain"))
     }
   else
     {
-    //echo "Upload: " . $_FILES["file"]["name"] . "<br />";
-    //echo "Type: " . $_FILES["file"]["type"] . "<br />";
-    //echo "Size: " . ($_FILES["file"]["size"] / 1024) . " Kb<br />";
-    //echo "Temp file: " . $_FILES["file"]["tmp_name"] . "<br />";
-
     if (file_exists("input/" . $_FILES["file"]["name"]))
       {
       echo $_FILES["file"]["name"] . " already exists. ";
@@ -27,38 +22,17 @@ if ((($_FILES["file"]["type"] == "text/plain"))
   }else{
   //echo "Invalid file";  
 }
-
-
 if(isset($_POST['filepath'])){
     $filename = $_POST['filepath'];
     $inputDir  = "D:\\Programming\\Xampp\\htdocs\\E-index\\input";
     $outputDir = "D:\\Programming\\Xampp\\htdocs\\E-index\\input";
     $command = "matlab -nodesktop -minimize -sd ".$inputDir." -r csi('".$outputDir."\\".$filename.".txt')";
     exec($command);
-    
-    /*//转换数组
-    $file = fopen("D:\\Programming\\Xampp\\htdocs\\E-index\\input\\test.txt", "r") or exit("Unable to open file!");
-    $iVariable=array();
-    $dVariable=array();
-    $i=0;
-    while(!feof($file)){
-        if($i==0){
-            $iVariable = split(' ', fgets($file));
-        }
-        else{
-            $dVariable = split(' ', fgets($file));
-        }
-        $i++;
-    }
-    fclose($file);
-    //转换数组结束*/;
-    
     $file = fopen('D:\\Programming\\Xampp\\htdocs\\E-index\\input\\test.txt', 'r');
     $matrix = array();
     while($entries = fgetcsv($file)) {
      $matrix[] = $entries;
     }
-    //print_r($matrix);
     fclose($file);
     echo '<script language="JavaScript" type="text/javascript">';
     echo 'var arr='.json_encode($matrix).';';
@@ -92,9 +66,7 @@ if(isset($_POST['filepath'])){
 	<script src="assets/js/respond.min.js"></script>
 	<![endif]-->
 </head>
-
 <body>
-		<!-- Fixed navbar -->
 	<div class="navbar navbar-inverse navbar-fixed-top headroom" >
 		<div class="container">
 			<div class="navbar-header">
@@ -125,32 +97,24 @@ if(isset($_POST['filepath'])){
 		</div>
 	</div> 
 	<!-- /.navbar -->
-
 	<header id="head" class="secondary"></header>
-
 	<!-- container -->
 	<div class="container">
-
 		<ol class="breadcrumb">
 			<li><a href="index.html">Home</a></li>
 			<li class="active">Application</li>
 		</ol>
-
 		<div class="row">
-			
 			<!-- Article main content -->
 			<article class="col-sm-8 maincontent">
 				<header class="page-header">
 					<h1 class="page-title">growth curves</h1>
 				</header>
 				<div id="container" style="min-width:400px;height:400px"></div>
-				
 			</article>
 			<!-- /Article -->
-			
 			<!-- Sidebar -->
 			<aside class="col-sm-4 sidebar sidebar-right">
-
 				<div class="widget">
 					<h4>Analysis</h4>
                      <form action="" method="post" enctype="multipart/form-data">             
@@ -158,27 +122,20 @@ if(isset($_POST['filepath'])){
                          <input type="file" name="file" id="file" value="File"/><br />
                          <input type="submit" class="btn btn-sm btn-success" name="submit" value="Submit" />
                     </form>
-                    
                     <form action="" method="post">
                         <br><input class="form-control" type="text" name="filepath" placeholder="input filename"><br />
                         <input type="submit" class="btn btn-sm btn-success" value="Submit" /><br />
                     </form>
-                                    
 				</div>
-
 			</aside>
 			<!-- /Sidebar -->
 
 		</div>
 	</div>	<!-- /container -->
-	
-
 	<footer id="footer" class="top-space">
-
 		<div class="footer1">
 			<div class="container">
 				<div class="row">
-					
 					<div class="col-md-3 widget">
 						<h3 class="widget-title">Contact</h3>
 						<div class="widget-body">
@@ -189,7 +146,6 @@ if(isset($_POST['filepath'])){
 							</p>	
 						</div>
 					</div>
-
 					<div class="col-md-3 widget">
 						<h3 class="widget-title">Follow me</h3>
 						<div class="widget-body">
@@ -199,14 +155,12 @@ if(isset($_POST['filepath'])){
 							</p>	
 						</div>
 					</div>
-
 					<div class="col-md-6 widget">
 						<h3 class="widget-title">QR code</h3>
 						<div class="widget-body">
 							<p></p>
 						</div>
 					</div>
-
 				</div> <!-- /row of widgets -->
 			</div>
 		</div>
@@ -235,14 +189,7 @@ if(isset($_POST['filepath'])){
 				</div> <!-- /row of widgets -->
 			</div>
 		</div>
-
-	</footer>	
-		
-
-
-
-
-	<!-- JavaScript libs are placed at the end of the document so the pages load faster -->
+	</footer>
     <!-- jQuery 2.0.2 -->
     <script src="assets/js/jQuery.min.js"></script>
 	<script src="assets/js/bootstrap.min.js"></script>
@@ -274,7 +221,7 @@ if(isset($_POST['filepath'])){
         },
         xAxis: {
             type: 'time',
-            dateTimeLabelFormats: { // don't display the dummy year
+            dateTimeLabelFormats: {
 /*                month: '%e. %b',*/
                 year: '%b'
             },
@@ -301,9 +248,6 @@ if(isset($_POST['filepath'])){
         },
         series:[{
             name: '用水总量',
-            // Define the data points. All series have a dummy year
-            // of 1970/71 in order to be compared on the same x axis. Note
-            // that in JavaScript, months start at 0 for January, 1 for February etc.
             data: item
         }]
     });

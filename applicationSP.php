@@ -8,11 +8,6 @@ if ((($_FILES["file"]["type"] == "text/plain"))
     }
   else
     {
-    //echo "Upload: " . $_FILES["file"]["name"] . "<br />";
-    //echo "Type: " . $_FILES["file"]["type"] . "<br />";
-    //echo "Size: " . ($_FILES["file"]["size"] / 1024) . " Kb<br />";
-    //echo "Temp file: " . $_FILES["file"]["tmp_name"] . "<br />";
-
     if (file_exists("input/" . $_FILES["file"]["name"]))
       {
       echo $_FILES["file"]["name"] . " already exists. ";
@@ -28,37 +23,17 @@ if ((($_FILES["file"]["type"] == "text/plain"))
   //echo "Invalid file";  
 }
 
-
 if(isset($_POST['filepath'])){
     $filename = $_POST['filepath'];
     $inputDir  = "D:\\Programming\\Xampp\\htdocs\\E-index\\input";
     $outputDir = "D:\\Programming\\Xampp\\htdocs\\E-index\\input";
     $command = "matlab -nodesktop -minimize -sd ".$inputDir." -r csi('".$outputDir."\\".$filename.".txt')";
     exec($command);
-    
-    /*//转换数组
-    $file = fopen("D:\\Programming\\Xampp\\htdocs\\E-index\\input\\test.txt", "r") or exit("Unable to open file!");
-    $iVariable=array();
-    $dVariable=array();
-    $i=0;
-    while(!feof($file)){
-        if($i==0){
-            $iVariable = split(' ', fgets($file));
-        }
-        else{
-            $dVariable = split(' ', fgets($file));
-        }
-        $i++;
-    }
-    fclose($file);
-    //转换数组结束*/;
-    
     $file = fopen('D:\\Programming\\Xampp\\htdocs\\E-index\\input\\test.txt', 'r');
     $matrix = array();
     while($entries = fgetcsv($file)) {
      $matrix[] = $entries;
     }
-    //print_r($matrix);
     fclose($file);
     echo '<script language="JavaScript" type="text/javascript">';
     echo 'var arr='.json_encode($matrix).';';
@@ -73,19 +48,14 @@ if(isset($_POST['filepath'])){
 	<meta name="viewport"    content="width=device-width, initial-scale=1.0">
 	<meta name="description" content="">
 	<meta name="author"      content="Sergey Pozhilov (GetTemplate.com)">
-	
 	<title>About - Progressus Bootstrap template</title>
-
 	<link rel="shortcut icon" href="assets/images/gt_favicon.png">
-	
 	<link rel="stylesheet" media="screen" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
 	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
 	<link rel="stylesheet" href="assets/css/font-awesome.min.css">
-
 	<!-- Custom styles for our template -->
 	<link rel="stylesheet" href="assets/css/bootstrap-theme.css" media="screen" >
 	<link rel="stylesheet" href="assets/css/main.css">
-
 	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
 	<!--[if lt IE 9]>
 	<script src="assets/js/html5shiv.js"></script>
@@ -171,8 +141,6 @@ if(isset($_POST['filepath'])){
 
 		</div>
 	</div>	<!-- /container -->
-	
-
 	<footer id="footer" class="top-space">
 
 		<div class="footer1">
@@ -236,13 +204,7 @@ if(isset($_POST['filepath'])){
 			</div>
 		</div>
 
-	</footer>	
-		
-
-
-
-
-	<!-- JavaScript libs are placed at the end of the document so the pages load faster -->
+	</footer>
     <!-- jQuery 2.0.2 -->
     <script src="assets/js/jQuery.min.js"></script>
 	<script src="assets/js/bootstrap.min.js"></script>
@@ -274,7 +236,7 @@ if(isset($_POST['filepath'])){
         },
         xAxis: {
             type: 'datetime',
-            dateTimeLabelFormats: { // don't display the dummy year
+            dateTimeLabelFormats: { 
                 month: '%e. %b',
                 year: '%b'
             },
@@ -301,9 +263,6 @@ if(isset($_POST['filepath'])){
         },
         series:[{
             name: 'Winter 2007-2008',
-            // Define the data points. All series have a dummy year
-            // of 1970/71 in order to be compared on the same x axis. Note
-            // that in JavaScript, months start at 0 for January, 1 for February etc.
             data: item
         }]
     });

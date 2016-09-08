@@ -1,6 +1,0 @@
-列出所有含有mysql字段的被安装的rpm package
-rpm -qa|grep mysql
-rpm -ivh --nodeps --force 某包
-rpm -Uvh 某包
-其中--nodeps忽略依赖关系安装
---force强制安装
