@@ -20,7 +20,7 @@ This is an analysis tool based on the Browse/Server structure for differentiatin
 
 2. Alternative servers (Apache or Nginx) can be selected to start the tool, with Apache linked to http://www.apache.org/ and Nginx linked to http://www.apache.org/.
 
-3. More importantly, it can also run without database. You can follow the specific instructions of the tool having been built in your computer and just start the exploration. 
+3. More importantly, it can also run without database. You can follow the specific instructions of the tool having been built in your computer and then just start the exploration.
 
 Support:
 
