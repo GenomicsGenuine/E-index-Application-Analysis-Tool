@@ -16,7 +16,7 @@ This is an analysis tool based on the Browse/Server structure for differentiatin
 
 1. Please comfirm the computer you're using is under the Matlab environment before downloading the files.
 
-*** All kinds of Matlab versions you'll be able to browse in http://www.mathworks.com/
+ Tips: All kinds of Matlab versions you'll be able to browse in http://www.mathworks.com/
 
 2. Alternative servers (Apache or Nginx) can be selected to start the tool, with Apache linked to http://www.apache.org/ and Nginx linked to http://www.apache.org/.
 
@@ -24,4 +24,4 @@ This is an analysis tool based on the Browse/Server structure for differentiatin
 
 Support:
 
-Some inevitable problems appear, please contact the email: wangjx@bjfu.edu.cn. After going through, the supporter will get back to you.
+Some inevitable problems appear, please contact the email: wangjx@bjfu.edu.cn or jianfeng.sunmt@gmail.com. After going through, the supporter will get back to you.
