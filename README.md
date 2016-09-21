@@ -1,5 +1,5 @@
 # E-index Application Analysis Tool Published
-Thank you for visiting E-index Official website. Here, you'll find entire E-index Application Analysis Tool in this directory.
+Thank you for visiting E-index Application Official website. Here, you'll find entire E-index Application Analysis Tool in this directory.
 
 Sincerely, thanks for the helpful links below due to original materials for developing the interfaces of E-index Application Analysis Tool.
 
