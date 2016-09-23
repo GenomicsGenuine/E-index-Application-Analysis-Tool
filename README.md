@@ -1,5 +1,9 @@
 # E-index Application Analysis Tool Published
-Thank you for visiting E-index Application Official website. Here, you'll find entire E-index Application Analysis Tool in this directory.
+The original idea of E-index method only comes from Dr. Jianxin Wang (This is a claim for the E-index Method). 
+
+The E-index Application only belongs to Jianfeng Sun.
+
+Thank you for visiting E-index Application Official website. Here, you'll find entire E-index Application Analysis Tool in this directory. 
 
 Sincerely, thanks for the helpful links below due to original materials for developing the interfaces of E-index Application Analysis Tool.
 
@@ -24,4 +28,4 @@ This is an analysis tool based on the Browse/Server structure for differentiatin
 
 Support:
 
-Some inevitable problems appear, please contact the email: wangjx@bjfu.edu.cn or jianfeng.sunmt@gmail.com. After going through, the supporter will get back to you.
+Some inevitable problems appear, please contact the email: jianfeng.sunmt@gmail.com. After going through, the supporter will get back to you.
