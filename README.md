@@ -1,5 +1,5 @@
 # E-index Application Analysis Tool Published
-* The original idea of E-index method only comes from Dr. Jianxin Wang (This is a claim for the E-index Method). 
+<!--* The original idea of E-index method only comes from Dr. Jianxin Wang (This is a claim for the E-index Method). -->
 
 * The E-index Application only belongs to Jianfeng Sun.
 
