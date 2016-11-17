@@ -1,5 +1,5 @@
 # E-index Application Analysis Tool Published
-<!--* The original idea of E-index method only comes from Dr. Jianxin Wang (This is a claim for the E-index Method). -->
+* The original idea of E-index method only comes from Dr. Jianxin Wang (This is a claim for the E-index Method). 
 
 * The E-index Application only belongs to Jianfeng Sun.  
 
@@ -20,7 +20,7 @@ This is an analysis tool based on the Browse/Server structure for differentiatin
 
 1. Please comfirm the computer you're using is under the Matlab (R) environment before downloading the files.
 
- Tips: All kinds of Matlab versions you'll be able to browse in http://www.mathworks.com/
+ Tips: All kinds of Matlab versions you could be able to browse in http://www.mathworks.com/
 
 2. Alternative servers (Apache or Nginx) can be selected to start the tool, with Apache linked to http://www.apache.org/ and Nginx linked to http://www.apache.org/.
 
