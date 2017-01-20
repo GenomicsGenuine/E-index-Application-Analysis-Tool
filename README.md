@@ -13,12 +13,11 @@ Sincerely, thanks for the helpful links below due to original materials for deve
 
 3.http://gettemplate.com
 
-
 Usage:
 
 This is an analysis tool based on the Browse/Server structure for differentiating complex traits within the scope of Genetics and Genomics.
 
-1. Please comfirm the computer you're using is under the Matlab (R) environment before downloading the files.
+1. Please confirm the computer you're using is under the Matlab (R) environment before downloading the files.
 
  Tips: All kinds of Matlab versions you could be able to browse in http://www.mathworks.com/
 
